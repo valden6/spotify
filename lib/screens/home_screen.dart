@@ -7,7 +7,6 @@ class HomeScreen extends StatelessWidget {
   _dynamicMessage(){
 
     String res;
-    print(DateTime.now().toString());
 
     if(DateTime.now().hour >= 19 && DateTime.now().hour <= 24)
       res = "Good evening";
@@ -22,7 +21,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.grey[900],
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
