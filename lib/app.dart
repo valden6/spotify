@@ -26,7 +26,7 @@ class _AppState extends State<App> {
         iconSize: 22,
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.grey[850],
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.white,
         unselectedFontSize: 11,

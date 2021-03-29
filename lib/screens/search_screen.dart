@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:spotify/widgets/music_controller.dart';
 
 class SearchScreen extends StatefulWidget {
   @override
@@ -73,173 +74,178 @@ class _SearchScreenState extends State<SearchScreen> {
           )
         )
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                alignment: Alignment.centerLeft,
-                child: Text("Your top genres",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold))
-              ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                child: Column(
-                  children: [
-                    Row(
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Container(
+              child: Column(
+                children: [
+                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    alignment: Alignment.centerLeft,
+                    child: Text("Your top genres",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold))
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
                       children: [
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.green[200],
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Stack(
-                              children: [
-                                Container(
-                                  alignment: Alignment.centerRight,
-                                  padding: EdgeInsets.all(20),
-                                  height: 100,
-                                  child: Image.asset("assets/pop.jpeg",fit: BoxFit.fill)
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.green[200],
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                                Container(
-                                  padding: EdgeInsets.only(left: 10,top: 10),
-                                  child: Text("Pop",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      alignment: Alignment.centerRight,
+                                      padding: EdgeInsets.all(20),
+                                      height: 100,
+                                      child: Image.asset("assets/pop.jpeg",fit: BoxFit.fill)
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(left: 10,top: 10),
+                                      child: Text("Pop",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                                    )
+                                  ]
                                 )
-                              ]
+                              )
+                            ),
+                            Padding(padding: EdgeInsets.symmetric(horizontal: 6)),
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.orange,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      alignment: Alignment.centerRight,
+                                      padding: EdgeInsets.all(20),
+                                      height: 100,
+                                      child: Image.asset("assets/rap.jpeg",fit: BoxFit.fill)
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(left: 10,top: 10),
+                                      child: Text("Hip Hop",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                                    )
+                                  ]
+                                )
+                              )
                             )
-                          )
+                          ]
                         ),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 6)),
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Stack(
-                              children: [
-                                Container(
-                                  alignment: Alignment.centerRight,
-                                  padding: EdgeInsets.all(20),
-                                  height: 100,
-                                  child: Image.asset("assets/rap.jpeg",fit: BoxFit.fill)
+                        Padding(padding: EdgeInsets.symmetric(vertical: 6)),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.blue[900],
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                                Container(
-                                  padding: EdgeInsets.only(left: 10,top: 10),
-                                  child: Text("Hip Hop",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      alignment: Alignment.centerRight,
+                                      padding: EdgeInsets.all(20),
+                                      height: 100,
+                                      child: Image.asset("assets/grand-hit.jpeg",fit: BoxFit.fill)
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(left: 10,top: 10),
+                                      child: Text("French Pop",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                                    )
+                                  ]
                                 )
-                              ]
-                            )
-                          )
-                        )
-                      ]
-                    ),
-                    Padding(padding: EdgeInsets.symmetric(vertical: 6)),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.blue[900],
-                              borderRadius: BorderRadius.circular(8),
+                              )
                             ),
-                            child: Stack(
-                              children: [
-                                Container(
-                                  alignment: Alignment.centerRight,
-                                  padding: EdgeInsets.all(20),
-                                  height: 100,
-                                  child: Image.asset("assets/grand-hit.jpeg",fit: BoxFit.fill)
+                            Padding(padding: EdgeInsets.symmetric(horizontal: 6)),
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.red[700],
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                                Container(
-                                  padding: EdgeInsets.only(left: 10,top: 10),
-                                  child: Text("French Pop",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      alignment: Alignment.centerRight,
+                                      padding: EdgeInsets.all(20),
+                                      height: 100,
+                                      child: Image.asset("assets/rock.jpeg",fit: BoxFit.fill)
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(left: 10,top: 10),
+                                      child: Text("Rock",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                                    )
+                                  ]
                                 )
-                              ]
+                              )
                             )
-                          )
-                        ),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 6)),
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.red[700],
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Stack(
-                              children: [
-                                Container(
-                                  alignment: Alignment.centerRight,
-                                  padding: EdgeInsets.all(20),
-                                  height: 100,
-                                  child: Image.asset("assets/rock.jpeg",fit: BoxFit.fill)
-                                ),
-                                Container(
-                                  padding: EdgeInsets.only(left: 10,top: 10),
-                                  child: Text("Rock",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
-                                )
-                              ]
-                            )
-                          )
+                          ]
                         )
                       ]
                     )
-                  ]
-                )
-              ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                alignment: Alignment.centerLeft,
-                child: Text("Browse all",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold))
-              ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 9),
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 1.75,
                   ),
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: 30,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-
-                    String genreName = (index % 3 == 0) ? "Classical" : "In the car";
-                    String genrePic = (index % 3 == 0) ? "assets/classical.jpeg" : "assets/drive.jpeg";
-                    Color genreColor = (index % 3 == 0) ? Colors.deepPurple[200] : Colors.lightGreen;
-                        
-                    return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 6,vertical: 6),
-                      decoration: BoxDecoration(
-                        color: genreColor,
-                        borderRadius: BorderRadius.circular(8),
+                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    alignment: Alignment.centerLeft,
+                    child: Text("Browse all",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold))
+                  ),
+                  Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 9),
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 1.75,
                       ),
-                      child: Stack(
-                        children: [
-                          Container(
-                            alignment: Alignment.centerRight,
-                            padding: EdgeInsets.all(20),
-                            height: 100,
-                            child: Image.asset(genrePic,fit: BoxFit.fill)
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: 30,
+                      shrinkWrap: true,
+                      itemBuilder: (BuildContext context, int index) {
+
+                        String genreName = (index % 3 == 0) ? "Classical" : "In the car";
+                        String genrePic = (index % 3 == 0) ? "assets/classical.jpeg" : "assets/drive.jpeg";
+                        Color genreColor = (index % 3 == 0) ? Colors.deepPurple[200] : Colors.lightGreen;
+                            
+                        return Container(
+                          margin: EdgeInsets.symmetric(horizontal: 6,vertical: 6),
+                          decoration: BoxDecoration(
+                            color: genreColor,
+                            borderRadius: BorderRadius.circular(8),
                           ),
-                          Container(
-                            padding: EdgeInsets.only(left: 10,top: 10),
-                            child: Text(genreName,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                          child: Stack(
+                            children: [
+                              Container(
+                                alignment: Alignment.centerRight,
+                                padding: EdgeInsets.all(20),
+                                height: 100,
+                                child: Image.asset(genrePic,fit: BoxFit.fill)
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 10,top: 10),
+                                child: Text(genreName,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+                              )
+                            ]
                           )
-                        ]
-                      )
-                    );
-                  }
-                )
+                        );
+                      }
+                    )
+                  )
+                ]
               )
-            ]
-          )
-        ),
+            )
+          ),
+          MusicController()
+        ]
       )
     );
   }

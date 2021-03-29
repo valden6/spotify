@@ -3,15 +3,15 @@ import 'package:flutter/services.dart';
 import 'package:spotify/app.dart';
 
 void main() {
-  runApp(InstagramApp());
+  runApp(SpotifyApp());
 }
 
-class InstagramApp extends StatefulWidget {
+class SpotifyApp extends StatefulWidget {
   @override
-  _InstagramAppState createState() => _InstagramAppState();
+  _SpotifyAppState createState() => _SpotifyAppState();
 }
 
-class _InstagramAppState extends State<InstagramApp> {
+class _SpotifyAppState extends State<SpotifyApp> {
 
   @override
   void initState(){

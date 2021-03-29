@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^8.11.0
+  audioplayers: ^0.18.1
+  audio_service: ^0.17.0
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -76,6 +78,7 @@ flutter:
     - assets/podcast-episode-2.jpeg
     - assets/podcast-logo-1.jpeg
     - assets/podcast-logo-2.jpeg
+    - assets/body-gold-oh-wonder.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
